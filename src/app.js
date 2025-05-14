@@ -1,5 +1,5 @@
 import express from 'express'
-import peliculasRoutes from './routes/peliculas.routes.js'
+import peliculasRoutes from './routes/medicamentos.routes.js'
 //import {pool} from './db.js'
 
 
