@@ -51,6 +51,17 @@ export const createMedicamentos= async(req,res)=>{
     return res.status(400).send({ error: 'Tipo inválido o no proporcionado' });
   }
 
+  if (!nombre || nombre.trim() === '') {
+  return res.status(400).send({ error: 'Nombre es inválido o no proporcionado' });
+  }
+
+    if (!presentacion || !['Sólida','Semisólida','Líquida'].includes(presentacion)) {
+    return res.status(400).send({ error: 'Presentación inválido o no proporcionado' });
+  }
+    if (!receta || !['S', 'N'].includes(receta)) {
+    return res.status(400).send({ error: 'Receta inválido o no proporcionado' });
+  }
+
   if (isNaN(precio) || Number(precio) <= 0) {
     return res.status(400).send({ error: 'Precio inválido' });
   }
